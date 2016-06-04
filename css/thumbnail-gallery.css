@@ -65,6 +65,7 @@ h4 {
 	border-radius: 0px;
 	max-width: 290px;
 	min-width: 290px;
+	max-height: 290px;
 	margin-bottom: 15px;
 	box-shadow: 10px 10px 5px #888888;
 }
@@ -72,6 +73,25 @@ h4 {
 	padding-left: 5px;
 }
 
+#new {
+	box-shadow: 10px 10px 5px #888888;
+	  transition: all .5s linear;
+}
+
+#new:hover {
+	box-shadow: 10px 10px 5px #f01e1e;
+}
+
+#newcaption h3{
+	color: #4f86d1;
+	-webkit-transition-property:color; 
+    -webkit-transition-duration: 1s, 1s; 
+    -webkit-transition-timing-function: linear, ease-in;
+}
+
+#newcaption:hover{
+	color: #333;
+}
 
 .page-header {
 	border-bottom: 0px;

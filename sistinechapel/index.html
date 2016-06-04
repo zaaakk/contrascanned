@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - OBJLoader + MTLLoader</title>
+		<title>The Sistine Chapel</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
 			body {
 				font-family: Monospace;
 				background-color: #000;
-				color: #fff;
+				color: #000;
 				margin: 0px;
 				overflow: hidden;
 			}
 			#info {
-				color: #fff;
+				color: #000;
 				position: absolute;
 				top: 10px;
 				width: 100%;
@@ -21,13 +21,40 @@
 				z-index: 100;
 				display:block;
 			}
+			
+			#pics {
+				background: #fff;
+				opacity: .9;
+				max-width:250px;
+				position:absolute;
+     bottom:0;
+     left:0;
+				padding-left:10px;
+			}
 			#info a, .button { color: #f00; font-weight: bold; text-decoration: underline; cursor: pointer }
+			
+			@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+#pics {
+display: none
+}
+			
+			
 		</style>
 	</head>
 
 	<body>
 		<div id="info">
-		<a href="http://contrascanned.com" target="_blank">Homex</a> 	<a href="http://threejs.org" target="_blank">Download</a> 
+		<a href="http://contrascanned.com" target="_blank">Home</a> 	<a href="sistinechapel/sistine.zip" >Download</a> 
+			
+		</div>
+		
+		<div id="pics">
+			
+			<p>A 3d model of the Sistine Chapel, created photogrammetrically from hundreds of Instagram images. Photography is not allowed within the Sistine Chapel. </p>
+			<img src="source1.png" width=150px height=150px>
+			<img src="source2.png" width=150px height=150px>
 		</div>
 
 		<script src="../sistinechapel/build/three.js"></script>
@@ -62,6 +89,11 @@
 				var directionalLight = new THREE.DirectionalLight( 0xffeedd );
 				directionalLight.position.set( 1, -3, 4 ).normalize();
 				scene.add( directionalLight );
+				
+				var directionalLight2 = new THREE.DirectionalLight( 0xddf3ff );
+				directionalLight2.position.set( -1, 3, -4 ).normalize();
+				scene.add( directionalLight2 );
+				
 				// sistinechapel
 				var onProgress = function ( xhr ) {
 					if ( xhr.lengthComputable ) {
